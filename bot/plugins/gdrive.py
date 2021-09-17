@@ -155,10 +155,10 @@ class GoogleDrive(plugin.Plugin):
                                              prompt="consent")
 
         await ctx.respond("Check the PM from me")
-        async with self.bot.conversation(self.bot.owner, timeout=60) as conv:
+        async with self.bot.conversation(self.bot.owner, timeout=120) as conv:
             request = await conv.send_message(
                 f"Please visit the link:\n{auth_url}\n"
-                "And reply the token here.\n**You have 60 seconds**.")
+                "And reply the token here.\n**You have 120 seconds**.")
 
             try:
                 response = await conv.get_response()
